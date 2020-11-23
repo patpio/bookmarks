@@ -13,6 +13,7 @@ def create_app():
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'bookmarks.db')}"
+    app.config['SECRET_KEY'] = 'dupa'
 
     from bookmarks.views import bp_main
     app.register_blueprint(bp_main)
@@ -22,3 +23,4 @@ def create_app():
     migrate = Migrate(app, db)
 
     return app
+

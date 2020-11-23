@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<article>
+    <header>
+        <h1>bookmarks</h1>
+    </header>
+    <section>
+        <h2>Recently added</h2>
+        {% if new_bookmarks.count() > 0 %}
+            {% for bm in new_bookmarks %}
+                <li><a href="{{ bm.url }}">{{ bm.description }}</a></li>
+            {% endfor %}
+        {% else %}
+            No bookmarks yet.
+        {% endif %}
+    </section>
+</article>
+
+
+
+</body>
+</html>

@@ -14,3 +14,5 @@ C/V - logic
 
 https://jinja.palletsprojects.com/en/2.11.x/
 https://docs.emmet.io/cheat-sheet/
+
+https://getbootstrap.com/docs/4.5/components/modal/

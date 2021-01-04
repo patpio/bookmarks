@@ -1,0 +1,24 @@
+<div class="bookmark">
+    <a href="{{ bookmark.url }}" class="header" target="_blank">
+    <h3 class="description">{{ bookmark.description|truncate(50, killwords=True) }}</h3>
+    <span class="url">{{ bookmark.url|truncate(50, killwords=True) }}</span>
+    </a>
+    <div class="info">
+        <span class="tags">
+            {% if bookmark.tags %}
+
+                {% for t in bookmark._tags %}
+                    <a href="{{ url_for('tag.tag', name=t.name) }}">{{ t.name }}</a>
+                {% endfor %}
+
+            {% endif %}
+        </span>
+        Added by <a href="{{ url_for('auth.user', username=bookmark.user.username) }}">{{ bookmark.user.username }}</a>
+        {% if current_user == bookmark.user and links %}
+        <span class="editlinks">
+            <a href="{{ url_for('bookmark.edit', bookmark_id=bookmark.id) }}">Edit</a>
+            <a href="{{ url_for('bookmark.delete', bookmark_id=bookmark.id) }}">Delete</a>
+            {% endif %}
+        </span>
+    </div>
+</div>

@@ -7,7 +7,7 @@ https://flask-migrate.readthedocs.io/en/latest/
 https://flask.palletsprojects.com/en/1.1.x/cli/
 
 MVC - model view controller
-MTV (flask) - model template view
+MTV (flask) - model template view - wzorzec architektoniczny
 M - data structure
 V/T - views presentation layer
 C/V - logic

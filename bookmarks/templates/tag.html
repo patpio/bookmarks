@@ -2,14 +2,16 @@
 {% block content %}
 <article>
     <header>
-        <h1>bookmarks</h1>
+        <h1>Bookmarks tagged {{ tag.name }}</h1>
     </header>
     <section>
-        <h2>Recently added</h2>
-        {% if new_bookmarks.count() > 0 %}
-            {% with bookmarks = new_bookmarks %}
+
+        {% if tag.bookmark.count() > 0 %}
+
+        {% with bookmarks=tag.bookmark %}
             {% include 'partials/_bookmarks_list.html' %}
-            {% endwith %}
+        {% endwith %}
+
         {% else %}
             No bookmarks yet.
         {% endif %}

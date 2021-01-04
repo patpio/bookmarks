@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<article>
+    <header>
+        <h1>Bookmarks for {{ user.username }}</h1>
+        {% if bookmarks.count() > 0 %}
+            {% include 'partials/_bookmarks_list.html' %}
+        {% else %}
+            This user has not added any bookmarks yet.
+        {% endif %}
+    </header>
+</article>
+{% endblock %}

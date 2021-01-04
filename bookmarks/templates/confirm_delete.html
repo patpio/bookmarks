@@ -1,0 +1,9 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    <h3>Are you sure you wanted delete this bookmark?</h3>
+    <a href="{{ url_for('auth.user', username=current_user.username) }}">No, take me out of here.</a>
+    <button>Yes, delete it.</button>
+</form>
+{% endblock %}

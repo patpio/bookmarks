@@ -27,4 +27,5 @@ class Bookmark(db.Model):
         if text:
             self._tags = [Tag.get_or_create(name) for name in text.split(',')]
 
-            # TODO create repr for bookmark
+    def __repr__(self):
+        return f'<Bookmark {self.url}>'

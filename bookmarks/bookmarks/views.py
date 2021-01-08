@@ -10,6 +10,7 @@ bp_bookmark = Blueprint('bookmark', __name__, url_prefix='/bookmarks')
 
 
 @bp_bookmark.route('/add', methods=['GET', 'POST'])
+@login_required
 def add():
     form = BookmarkForm()
     if form.validate_on_submit():
